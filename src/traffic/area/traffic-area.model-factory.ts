@@ -10,7 +10,7 @@ export class TrafficAreaModelFactory
   private builder(model: ITrafficAreaDto): ITrafficArea {
     return {
       ...model,
-      departmentUnitId: Number(model.departmentunitid),
+      departmentUnitId: Number(model.trafficdepartmentunitid),
       fetchedAt: new Date(),
     };
   }

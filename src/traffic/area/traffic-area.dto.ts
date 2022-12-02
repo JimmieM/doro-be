@@ -3,5 +3,6 @@ export interface ITrafficAreaDto {
   name: string;
   zoom: number;
   radius: number;
-  departmentunitid: number;
+  departmentunitid: string;
+  trafficdepartmentunitid: string;
 }

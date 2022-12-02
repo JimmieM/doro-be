@@ -5,7 +5,7 @@ import { axiosApiInstance, catchError } from '../../libs/axios.interceptor';
 
 @Injectable()
 export class TrafficMessageAPI {
-  constructor(@Inject(CONFIG_PROVIDER) private readonly config: IConfig) {}
+  constructor(@Inject(CONFIG_PROVIDER) public readonly config: IConfig) {}
 
   GetMessagesByAreaName(areaName: string) {
     return axiosApiInstance
