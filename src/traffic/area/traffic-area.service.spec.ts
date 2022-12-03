@@ -43,8 +43,7 @@ describe('TrafficAreaService', () => {
   });
 
   it('returns expected department unit ID', async () => {
-    const someMethodToTestOutputToCheck =
-      await trafficAreaService.GetAreaByLatLng(200, 200);
+    const response = await trafficAreaService.GetAreaByLatLng(200, 200);
 
     const expected = {
       departmentUnitId: 2855,
@@ -54,8 +53,6 @@ describe('TrafficAreaService', () => {
       zoom: '11',
     };
 
-    expect(someMethodToTestOutputToCheck.departmentUnitId).toEqual(
-      expected.departmentUnitId,
-    );
+    expect(response.departmentUnitId).toEqual(expected.departmentUnitId);
   });
 });
