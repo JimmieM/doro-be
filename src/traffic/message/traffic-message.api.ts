@@ -9,7 +9,7 @@ export class TrafficMessageAPI {
 
   GetMessagesByAreaName(areaName: string) {
     return axiosApiInstance
-      .get<any>(
+      .get<string>(
         `${this.config.sverigesRadioAPI}/messages?trafficareaname=${areaName}`,
         {
           headers: {

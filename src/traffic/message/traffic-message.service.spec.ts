@@ -45,6 +45,55 @@ describe('TrafficMessageService', () => {
     expect(trafficMessageService).toBeDefined();
   });
 
+  it('filters duplicate messages', async () => {
+    const response = await trafficMessageService.FilterDuplicateMessages([
+      {
+        id: '1251414441',
+        priority: 0,
+        priorityString: 'hög',
+        createdDate: new Date(),
+        title: 'en titel',
+        exactLocation: '',
+        description: 'en beskrivning',
+        latitude: 0,
+        longitude: 0,
+        category: 0,
+        subCategory: 0,
+        fetchedAt: new Date(),
+      },
+      {
+        id: '6666363',
+        priority: 0,
+        priorityString: 'hög',
+        createdDate: new Date(),
+        title: 'en titel',
+        exactLocation: '',
+        description: 'en beskrivning',
+        latitude: 0,
+        longitude: 0,
+        category: 0,
+        subCategory: 0,
+        fetchedAt: new Date(),
+      },
+      {
+        id: '6666363',
+        priority: 0,
+        priorityString: 'hög',
+        createdDate: new Date(),
+        title: 'en titel 2',
+        exactLocation: '',
+        description: 'en beskrivning 2',
+        latitude: 0,
+        longitude: 0,
+        category: 0,
+        subCategory: 0,
+        fetchedAt: new Date(),
+      },
+    ]);
+
+    expect(response.length).toEqual(2);
+  });
+
   it('returns expected messages', async () => {
     const response = await trafficMessageService.GetMessagesByAreaName(
       'Stockholm',

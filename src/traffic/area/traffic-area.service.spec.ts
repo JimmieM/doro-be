@@ -20,7 +20,7 @@ describe('TrafficAreaService', () => {
     jest
       .spyOn(mockedTrafficAreaAPI, 'GetAreaByLatLng')
       .mockImplementation(
-        async (lat: number, lng: number) =>
+        async (_lat: number, _lng: number) =>
           '<?xml version="1.0" encoding="utf-8"?>\r\n<sr>\r\n  <copyright>Copyright Sveriges Radio 2022. All rights reserved.</copyright>\r\n  <area name="Malmöhus" zoom="11" radius="80" trafficdepartmentunitid="2855" />\r\n</sr>',
       );
   });

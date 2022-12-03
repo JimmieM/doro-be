@@ -9,7 +9,7 @@ export class TrafficAreaAPI {
 
   GetAreaByLatLng(lat: number, lng: number) {
     return axiosApiInstance
-      .get<any>(
+      .get<string>(
         `${this.config.sverigesRadioAPI}/areas?latitude=${lat}&longitude=${lng}`,
         {
           headers: {

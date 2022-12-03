@@ -10,9 +10,11 @@ export class TrafficMessageModelFactory
   private builder(model: ITrafficMessageDto): ITrafficMessage {
     const stringifyPriority = (priority: number) => {
       const priorites = {
-        1: 'Låg',
+        1: 'Hög',
         2: 'Medium',
-        3: 'Hög',
+        3: 'Låg',
+        4: 'Jättelåg',
+        5: 'Superlåg',
       };
 
       return priorites[priority];
