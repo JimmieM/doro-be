@@ -1,5 +1,5 @@
 import { Injectable, UnprocessableEntityException } from '@nestjs/common';
-import { ITrafficMessage } from '../models/traffic-message.model';
+import { ITrafficAreaResponse } from '../models/traffic-message.model';
 import { TrafficAreaService } from './area/traffic-area.service';
 import { TrafficMessageService } from './message/traffic-message.service';
 
@@ -13,11 +13,14 @@ export class TrafficService {
   async GetMessagesByLatLng(
     lat: number,
     lng: number,
-  ): Promise<ITrafficMessage[]> {
+  ): Promise<ITrafficAreaResponse> {
     const area = await this.areaService.GetAreaByLatLng(lat, lng);
     if (!area) throw new UnprocessableEntityException('No area found.');
 
     const messages = await this.messageService.GetMessagesByAreaName(area.name);
-    return messages;
+    return {
+      messages,
+      city: area.name,
+    };
   }
 }

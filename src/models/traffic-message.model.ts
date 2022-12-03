@@ -12,3 +12,8 @@ export interface ITrafficMessage {
   subCategory: number;
   fetchedAt: Date;
 }
+
+export interface ITrafficAreaResponse {
+  messages: ITrafficMessage[];
+  city: string;
+}
