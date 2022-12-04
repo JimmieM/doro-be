@@ -99,6 +99,6 @@ describe('TrafficMessageService', () => {
       'Stockholm',
     );
 
-    expect(response.length).toEqual(7);
+    expect(response.length).toEqual(6);
   });
 });
