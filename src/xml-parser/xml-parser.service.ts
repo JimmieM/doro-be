@@ -1,5 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import * as parser from 'xml2json';
+
 @Injectable()
 export class XMLParserService {
   ToJSON<T>(xml: string): T {
