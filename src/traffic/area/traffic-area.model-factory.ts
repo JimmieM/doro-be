@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { IDataModelFactory } from '../../model-factory/model-factory.model';
+import { IDataModelFactory } from '../../models/model-factory.model';
 import { ITrafficArea } from '../../models/traffic-area.model';
 import { ITrafficAreaDto } from './traffic-area.dto';
 
